@@ -1,0 +1,18 @@
+
+import re
+
+""" opens text file"""
+source = open('WarAndPeace.txt')
+book = source.read()
+
+def filterat(book):
+      """ checks if the argument given is a string"""
+      if type(book) == str:
+            """ filters out the words that end with at"""
+            result = re.findall(r'\w+at\b',book)
+            return result
+      else:
+            raise TypeError("wrong type, needs to be a string")
+
+
+print filterat(book)
